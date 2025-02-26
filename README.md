@@ -44,7 +44,7 @@ In order to construct the train dataset for Judgment model, you can follow Table
   'content': str # The context of data, if available.
 }
 ```
-After that, you can construt multiple choices data using different LLMs or download the data directly from [here](https://huggingface.co/datasets/sanwuge/ConsJudge/tree/main). You can also use other methods to construct multiple choices to increase diversity. The more diverse the choices, the better the effect.
+After that, you can construt multiple choices data using different LLMs or download the data directly from [here](https://huggingface.co/datasets/sanwuge/ConsJudge_train). You can also use other methods to construct multiple choices to increase diversity. The more diverse the choices, the better the effect.
 
 ```
 cd script
@@ -79,7 +79,7 @@ For AQUA-RAT, ECQA, StrategyQA, Web_Questions datasets, you need to further proc
 cd src/RAG_train
 python preprocess_acc_data.py
 ```
-Finally, you can obtain four original data files in folder``data/RAG_train``. You can also download the original data directly form [here](https://huggingface.co/datasets/sanwuge/ConsJudge/tree/main).
+Finally, you can obtain four original data files in folder``data/RAG_train``. You can also download the original data directly form [here](https://huggingface.co/datasets/sanwuge/RAG_train).
 ### 2. Construct DPO data using Judgment Model.
 You need to first use Judgment Model to build a higher quality DPO dataset.
 ```
@@ -95,7 +95,7 @@ python ../src/RAG_train/merge_lora.py
 ```
 ## Evaluation
 ### 1. Prepare the test data.
-For constructing the test data, you can download KILT's test dataset from [here](https://github.com/facebookresearch/KILT) and select the corresponding test dataset from KILT according to Table 1 in the paper. After that, you can retrieve the relevant documents for each test dataset. Please refer to [https://github.com/OpenMatch/RAG-DDR](https://github.com/OpenMatch/RAG-DDR) for more details. You should put test data in folder ``data/evaluation``. You can also download the test data directly form [here](https://huggingface.co/datasets/sanwuge/ConsJudge/tree/main).
+For constructing the test data, you can download KILT's test dataset from [here](https://github.com/facebookresearch/KILT) and select the corresponding test dataset from KILT according to Table 1 in the paper. After that, you can retrieve the relevant documents for each test dataset. Please refer to [https://github.com/OpenMatch/RAG-DDR](https://github.com/OpenMatch/RAG-DDR) for more details. You should put test data in folder ``data/evaluation``. You can also download the test data directly form [here](https://huggingface.co/datasets/sanwuge/evaluation).
 
 ### 2. Evaluation.
 For NQ, Hotpotqa, TriviaQA datasets:
